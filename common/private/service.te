@@ -9,3 +9,6 @@ type lineage_trust_service, system_api_service, system_server_service, service_m
 type pocket_service, system_api_service, system_server_service, service_manager_type;
 
 type app_lock_service, system_api_service, system_server_service, service_manager_type;
+
+# FaceUnlock
+type faceunlock_service, system_api_service, system_server_service, service_manager_type;
