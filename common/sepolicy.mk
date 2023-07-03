@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from Lineage
+# inherit from Fuse
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -16,29 +16,29 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/public
+    device/fuse/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/private
+    device/fuse/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/system \
+    device/fuse/sepolicy/common/dynamic \
+    device/fuse/sepolicy/common/system \
     hardware/google/pixel-sepolicy/flipendo \
     hardware/google/pixel-sepolicy/turbo_adapter
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/lineage/sepolicy/common/dynamic \
-    device/lineage/sepolicy/common/vendor \
+    device/fuse/sepolicy/common/dynamic \
+    device/fuse/sepolicy/common/vendor \
     hardware/google/pixel-sepolicy/flipendo \
     hardware/google/pixel-sepolicy/turbo_adapter
 endif
 
 # Selectively include legacy rules defined by the products
--include device/lineage/sepolicy/legacy-common/sepolicy.mk
+-include device/fuse/sepolicy/legacy-common/sepolicy.mk
 
 # Include atv rules on atv product
 ifeq ($(PRODUCT_IS_ATV), true)
-include device/lineage/sepolicy/atv/sepolicy.mk
+include device/fuse/sepolicy/atv/sepolicy.mk
 endif
